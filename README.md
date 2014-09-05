@@ -1,4 +1,4 @@
-##SQL*Plus Docker image
+## SQL*Plus Docker image
 
 Connect to a running Oracle database like this
 
