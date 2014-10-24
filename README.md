@@ -1,13 +1,14 @@
-## SQL*Plus Docker image
 
-Connect to a running Oracle database like this
+SQLPlus dockerized
+==================
 
-`docker run --interactive guywithnose/sqlplus sqlplus {CONNECTION_STRING}`
-
-Or run your own Oracle XE database through docker and then connect to it.
+expects to be linked to an Oracle XE like so:
 
 ```bash
-docker run --detach --name myOracle guywithnose/oracle-xe-11g
-(Wait for Oracle to initialize)
-docker run --interactive --link myOracle:oracle guywithnose/sqlplus
+docker run --interactive --link orcl:oracle thriqon/sqlplus
 ```
+
+Uses `system/oracle` as default credentials, may be overridden with
+`-e USERNAME=username` and `-e PASSWORD=password`.
+
+(based on guywithnose/docker-sqlplus)
